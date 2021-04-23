@@ -1,4 +1,6 @@
 package sit.integrated.project.repositories;
 
-public interface ProductsRepositories {
+import org.springframework.data.jpa.repository.JpaRepository;
+import sit.integrated.project.models.Products;
+public interface ProductsRepositories extends JpaRepository<Products,String> {
 }

@@ -1,56 +1,59 @@
 package sit.integrated.project.models;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-
+import lombok.Getter;
+import lombok.Setter;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 @Entity
 public class Products {
+    @Getter
+    @Setter
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String name;
-    private String description;
-    private double price;
-    @Lob
-    @Column(columnDefinition = "MEDIUMBLOB")
-    private String image;
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    public double getPrice() {return price; }
-    public void setPrice(int price) {
-        this.price = price;
-    }
-    public String getImage() {
-        return image;
-    }
-    public void setImage(String image) {
-        this.image = image;
-    }
-    @Override
-    public String toString() {
-        return "Product [id=" + id + ", name=" + name + ", description="
-                + description + ", price=" + price + ", image="
-                + image + "]";
-    }
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( name ="Product_id")
+    private String productId;
+
+    @Getter
+    @Setter
+    @Column(name ="Product_name")
+    private String productName;
+
+    @Getter
+    @Setter
+    @Column(name ="Product_Type")
+    private String productType;
+
+    @Getter
+    @Setter
+    @Column(name ="Product_Description")
+    private String productDescription	;
+
+    @Getter
+    @Setter
+    @Column(name ="Product_Price")
+    private double product_Price;
+
+    @Getter
+    @Setter
+    @Column(name ="Product_Size")
+    private String productSize;
+
+    @Getter
+    @Setter
+    @Column(name ="Product_Gender")
+    private char productGender;
+
+    @Getter
+    @Setter
+    @Column(name ="Product_Image")
+    private double productImage;
+
+    @Getter
+    @Setter
+    @Column(name ="product_Manufactured")
+    private Date date;
+
 
 
 }
