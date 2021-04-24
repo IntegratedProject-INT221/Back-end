@@ -2,12 +2,10 @@ package sit.integrated.project.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import javax.persistence.*;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+@Entity
 public class Brands {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

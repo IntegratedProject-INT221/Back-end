@@ -54,6 +54,17 @@ public class Products {
     @Column(name ="product_Manufactured")
     private Date date;
 
+    @ManyToOne @JoinColumn(name = "Product_id" , nullable = false)
+    @Getter @Setter private Brands ProductBrands;
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "ProductColors" ,
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "color_id")
+    )
+    @Getter @Setter private List<Colors> ProductColors;
 
 
 }
