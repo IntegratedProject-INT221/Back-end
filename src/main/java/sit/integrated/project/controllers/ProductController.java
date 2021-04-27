@@ -12,12 +12,12 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/")
 public class ProductController {
 @Autowired
     private ProductsRepositories productsRepositories;
 
-@GetMapping("/item")
+@GetMapping("/GetProducts")
 public List<Products> getAllProduct(){return productsRepositories.findAll();
 }
 

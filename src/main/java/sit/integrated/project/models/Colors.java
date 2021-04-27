@@ -1,25 +1,23 @@
 package sit.integrated.project.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "colors")
+@Getter@Setter
+//@AllArgsConstructor
 public class Colors {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="Color_id")
-    @Getter
-    @Setter
-    private int colorId;
+    @Column(name ="colorid")
+    private String colorId;
 
-    @Getter
-    @Setter
-    @Column(name ="Color_Name")
+    @Column(name ="colorname")
     private String colorName;
 
-//    @Getter
-//    @Setter
-//    @Column(name ="colorhex")
-//    private String colorHex;
+
+    @Column(name ="codecolor")
+    private String CodeColor;
 }
