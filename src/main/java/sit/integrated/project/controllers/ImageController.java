@@ -20,54 +20,5 @@ import static java.lang.Integer.parseInt;
 @RestController
 @RequestMapping("/image")
 public class ImageController {
-//    @Autowired
-//    private ProductsRepositories productRepository;
-//
-//    @GetMapping("/get/{id:.+}")
-//    public ResponseEntity<byte[]> getImage(@PathVariable("id")String id) throws IOException {
-//        System.out.println(id);
-//        FileInputStream fi = new FileInputStream("picture\\"+id);
-//        byte[] image = fi.readAllBytes();
-//        fi.close();
-//        return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(image);
-//    }
-//
-//    @PostMapping ("/add/{id}")
-//    public ResponseEntity<Object> fileUpload(@RequestParam("File") MultipartFile file, @PathVariable("id")String id)throws IOException{
-//        System.out.println(file.getContentType());
-//        File myFile = new File("picture\\" + id);
-//        if(myFile.createNewFile()) {
-//            FileOutputStream fos = new FileOutputStream(myFile);
-//            fos.write(file.getBytes());
-//            fos.close();
-//        }
-//        return  new ResponseEntity<>("The File Uploaded Successfully", HttpStatus.OK);
-//    }
-//
-//    @PutMapping("/edit/{id:.+}")
-//    public void changeImage(@RequestParam("File")MultipartFile file,@PathVariable("id")String id)throws IOException {
-//        FileOutputStream fos = new FileOutputStream("picture\\"+id);
-//        fos.write(file.getBytes());
-//        fos.close();
-//    }
-//
-//    @DeleteMapping("/delete/{id:.+}")
-//    public void deleteImage(@PathVariable("id")String id){
-//        String IdString[] = id.split("\\.(?=[^\\.]+$)");
-//        int hasId = parseInt(IdString[0]);
-//        if (hasFoundId(hasId)){
-//            File myFile = new File("picture\\" + id);
-//            myFile.delete();
-//        }
-//    }
-//
-//    public boolean hasFoundId(int id){
-////        List<Products> products = ProductsRepositories.findAll();
-////        for (int i = 0; i < products.size(); i++) {
-////            if(products.get(i).getProductId() == id){
-////                return true;
-////            }
-////        }
-//        return false;
-//    }
+
 }
