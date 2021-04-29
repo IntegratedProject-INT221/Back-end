@@ -12,9 +12,9 @@ import java.util.List;
 public class Products {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column( name ="productid")
-    private int productId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( name ="productid" , updatable = false , nullable = false)
+    private Integer productId;
 
 
     @Column(name ="productname")
@@ -48,7 +48,7 @@ public class Products {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
-    @JoinTable(name = "productscolors" ,
+    @JoinTable(name = "productcolors" ,
             joinColumns = @JoinColumn(name = "productid"),
             inverseJoinColumns = @JoinColumn(name = "colorid")
     )
