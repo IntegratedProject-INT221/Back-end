@@ -19,10 +19,10 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/Images")
 public class ImageController {
-@Autowired
-    ProductsRepositories productsRepositories;
+//@Autowired
+//    ProductsRepositories productsRepositories;
 
-//@Value("${file.upload-dir")
+
 String FILE_DIRECTORY = "./images/";
 
 @GetMapping("/Get/{filename:,+")

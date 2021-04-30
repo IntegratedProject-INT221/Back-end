@@ -24,6 +24,7 @@ public class ProductController {
 
      @PostMapping("/Create")
     public Products createProduct(@RequestBody Products products){
+         products.setProductId(productsRepositories.productLatestId()+ 1);
         productsRepositories.save(products);
         return products;
     }
