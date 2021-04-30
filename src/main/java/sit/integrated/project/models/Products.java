@@ -12,8 +12,8 @@ import java.util.List;
 public class Products {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column( name ="productid" , updatable = false , nullable = false)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( name ="productid")
     private Integer productId;
 
 
