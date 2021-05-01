@@ -41,16 +41,16 @@ public class Products {
     private Date date;
 
     @ManyToOne
-    @JoinColumn(name="brandid", nullable=false)
+    @JoinColumn(name="Brands_brandId", nullable=false)
     private Brands BrandId;
 
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
-    @JoinTable(name = "productcolors" ,
-            joinColumns = @JoinColumn(name = "productid"),
-            inverseJoinColumns = @JoinColumn(name = "colorid")
+    @JoinTable(name = "products_colors" ,
+            joinColumns = @JoinColumn(name = "products_productid"),
+            inverseJoinColumns = @JoinColumn(name = "colors_colorid")
     )
 
     private List<Colors> ProductColors= new ArrayList<>();
