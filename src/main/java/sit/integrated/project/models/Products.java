@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
 @Entity
-@Table(name = "products")
+@Table(name = "Products")
 @Getter@Setter
 public class Products {
 
@@ -41,14 +41,13 @@ public class Products {
     private Date date;
 
     @ManyToOne
-    @JoinColumn(name="Brands_brandId", nullable=false)
+    @JoinColumn(name="brands_brandid", nullable=false)
     private Brands BrandId;
-
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
-    @JoinTable(name = "products_colors" ,
+    @JoinTable(name = "Products_Colors" ,
             joinColumns = @JoinColumn(name = "products_productid"),
             inverseJoinColumns = @JoinColumn(name = "colors_colorid")
     )
