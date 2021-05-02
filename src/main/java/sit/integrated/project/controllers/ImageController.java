@@ -15,6 +15,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/Images")
+@CrossOrigin(origins = {"http://localhost:8081"})
 public class ImageController {
 
 
