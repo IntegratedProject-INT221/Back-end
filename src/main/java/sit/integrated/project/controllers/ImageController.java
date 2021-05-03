@@ -6,12 +6,15 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import sit.integrated.project.models.Products;
 
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 @RestController
 @RequestMapping("/Images")
@@ -41,4 +44,9 @@ String FILE_DIRECTORY = "./images/";
     fos.close();
 
 }
+
+    @DeleteMapping("/Delete/{id}")
+    public void deleteImages(@PathVariable int id) throws IOException {
+        Files.delete(Path.of("images" + "/" + id));
+    }
 }
