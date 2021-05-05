@@ -1,7 +1,10 @@
 package sit.integrated.project.controllers;
 
 
+
 import org.springframework.web.bind.annotation.*;
+import sit.integrated.project.exceptions.ExceptionResponse;
+import sit.integrated.project.exceptions.ProductsException;
 import sit.integrated.project.models.Products;
 import sit.integrated.project.repositories.ProductsRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import java.util.List;
 public class ProductController {
 @Autowired
     private ProductsRepositories productsRepositories;
+    private  Products Product;
 
 
    @GetMapping("/GetProducts")
@@ -25,10 +29,12 @@ public class ProductController {
 
      @PostMapping("/Create")
     public Products createProduct(@RequestBody Products products){
-         products.setProductId(productsRepositories.productLatestId()+ 1);
-        productsRepositories.save(products);
-        return products;
-    }
+       products.setProductId(productsRepositories.productLatestId()+ 1);
+    productsRepositories.save(products);
+    return products;
+
+   }
+
 
     @PutMapping("/Edit/{id}")
     public Products editProduct(@RequestBody Products products,@PathVariable int id){

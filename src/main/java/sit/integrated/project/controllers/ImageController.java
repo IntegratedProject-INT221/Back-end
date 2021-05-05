@@ -6,6 +6,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import sit.integrated.project.exceptions.ExceptionResponse;
+import sit.integrated.project.exceptions.ProductsException;
 import sit.integrated.project.models.Products;
 
 
@@ -36,17 +38,20 @@ String FILE_DIRECTORY = "./images/";
 @PostMapping("/upload/{id}")
 
     public void imageUpload(@RequestParam("File")MultipartFile file, @PathVariable("id") int id ) throws IOException{
-    String ChangNameOfImages = "." + FilenameUtils.getExtension(file.getOriginalFilename());
-    File imageFile = new File (  FILE_DIRECTORY + Integer.toString(id)+ChangNameOfImages);
-    imageFile.createNewFile();
-    FileOutputStream fos = new FileOutputStream(imageFile);
-    fos.write(file.getBytes());
-    fos.close();
+        String ChangNameOfImages = "." + FilenameUtils.getExtension(file.getOriginalFilename());
+        File imageFile = new File (  FILE_DIRECTORY + Integer.toString(id)+ChangNameOfImages);
+        imageFile.createNewFile();
+        FileOutputStream fos = new FileOutputStream(imageFile);
+        fos.write(file.getBytes());
+        fos.close();
+        System.out.println("The File Uploaded Successfully");
 
 }
 
+
     @DeleteMapping("/Delete/{id}")
-    public void deleteImages(@PathVariable int id) throws IOException {
+    public void Imagesdelete(@PathVariable String id) throws IOException {
         Files.delete(Path.of("images" + "/" + id));
+        System.out.println("Images have delete");
     }
 }
