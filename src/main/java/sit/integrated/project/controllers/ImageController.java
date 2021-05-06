@@ -20,7 +20,7 @@ import java.nio.file.Path;
 
 @RestController
 @RequestMapping("/Images")
-@CrossOrigin(origins = {"http://localhost:8081"})
+@CrossOrigin
 public class ImageController {
 
 
