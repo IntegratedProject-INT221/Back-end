@@ -20,7 +20,7 @@ import java.nio.file.Path;
 
 @RestController
 @RequestMapping("/Images")
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ImageController {
 
 

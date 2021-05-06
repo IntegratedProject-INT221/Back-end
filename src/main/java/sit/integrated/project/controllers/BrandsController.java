@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Brands")
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BrandsController {
     @Autowired
     private BrandsRepositories BrandsRepositories;
