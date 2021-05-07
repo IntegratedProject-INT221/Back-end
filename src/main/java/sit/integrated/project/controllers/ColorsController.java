@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Colors")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin
 public class ColorsController {
     @Autowired
     private ColorsRepositories ColorsRepositories;

@@ -20,7 +20,7 @@ import java.nio.file.Path;
 
 @RestController
 @RequestMapping("/Images")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin
 public class ImageController {
 
 
@@ -47,7 +47,17 @@ String FILE_DIRECTORY = "./images/";
         System.out.println("The File Uploaded Successfully");
 
 }
+@PutMapping("/edit/{id}")
+    public void imageEdit(@RequestParam("File")MultipartFile file, @PathVariable("id") int id ) throws IOException{
+    String ChangNameOfImages = "." + FilenameUtils.getExtension(file.getOriginalFilename());
+    File imageFile = new File (  FILE_DIRECTORY + Integer.toString(id)+ChangNameOfImages);
+    imageFile.createNewFile();
+    FileOutputStream fos = new FileOutputStream(imageFile);
+    fos.write(file.getBytes());
+    fos.close();
+    System.out.println("The File Uploaded Successfully");
 
+}
 
     @DeleteMapping("/Delete/{id}")
     public void Imagesdelete(@PathVariable String id) throws IOException {

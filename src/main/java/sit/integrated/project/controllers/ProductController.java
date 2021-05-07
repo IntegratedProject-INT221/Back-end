@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Products")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin
 public class ProductController {
 @Autowired
     private ProductsRepositories productsRepositories;
