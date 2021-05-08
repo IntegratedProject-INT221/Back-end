@@ -2,10 +2,7 @@
  services:
      my-spring:
          image: ghcr.io/integratedproject-int221/back-end:master 
- network:
-     defualt:
-         external:
-             name: project221
+
 
 
 
