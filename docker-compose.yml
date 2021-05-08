@@ -1,15 +1,5 @@
 version: "3"
 services:
-  backend:
-    build: .
-    ports:
-      - "3000:3000"
-    container_name: backend
-    environment:
-      - MYSQL_DATABASE=ProjectINT221
-      - MYSQL_USER=admin
-      - MYSQL_ROOT_PASSWORD=adminINT221
-networks:
-  default:
-    external:
-      name: project221
+  services:
+    my-spring:
+      image: ghcr.io/integratedproject-int221/back-end:master
