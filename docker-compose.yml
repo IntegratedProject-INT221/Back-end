@@ -10,8 +10,6 @@ services:
       - MYSQL_DATABASE=ProjectINT221
       - MYSQL_USER=admin
       - MYSQL_ROOT_PASSWORD=adminINT221
-    volumes:
-      - ~/backend_data:/images
 networks:
   default:
     external:
