@@ -9,7 +9,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.time.LocalDateTime;
 
-public class CustomizedException {
+public class ProductExceptionHandler {
     @ControllerAdvice
     public class CustomizedExceptionHandling extends ResponseEntityExceptionHandler {
 
