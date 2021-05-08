@@ -1,10 +1,19 @@
  version: '3'
  services:
      my-spring:
+<<<<<<< HEAD
+         image: ghcr.io/integratedproject-int221/back-end:master 
+ network:
+     defualt:
+         external:
+             name: project221
+         
+=======
          image: ghcr.io/integratedproject-int221/back-end:master
          ports:
           - "3000:8080"
 
+>>>>>>> 30620d111bf565ecf57bb13d5063ffbafb64febb
         
 
 
