@@ -3,7 +3,7 @@
      my-spring:
          image: ghcr.io/integratedproject-int221/back-end:master
          ports:
-          - "3000:3000"
+          - "3000:8080"
 
         
 

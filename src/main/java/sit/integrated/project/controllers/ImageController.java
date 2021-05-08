@@ -38,8 +38,9 @@ String FILE_DIRECTORY = "./images/";
 @PostMapping("/upload/{id}")
 
     public void imageUpload(@RequestParam("File")MultipartFile file, @PathVariable("id") int id ) throws IOException{
+
         String ChangNameOfImages = "." + FilenameUtils.getExtension(file.getOriginalFilename());
-        File imageFile = new File (  FILE_DIRECTORY + Integer.toString(id)+ChangNameOfImages);
+        File imageFile = new File(FILE_DIRECTORY + Integer.toString(id) + ChangNameOfImages);
         imageFile.createNewFile();
         FileOutputStream fos = new FileOutputStream(imageFile);
         fos.write(file.getBytes());
