@@ -2,7 +2,6 @@ version: "3"
 services:
   backend:
     build: .
-    image: backend
     ports:
       - "3000:3000"
     container_name: backend
@@ -10,8 +9,6 @@ services:
       - MYSQL_DATABASE=ProjectINT221
       - MYSQL_USER=admin
       - MYSQL_ROOT_PASSWORD=adminINT221
-    volumes:
-      - ~/backend_data:/images
 networks:
   default:
     external:
