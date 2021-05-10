@@ -1,6 +1,5 @@
 version: "3"
 services:
-  services:
     my-spring:
       image: ghcr.io/integratedproject-int221/back-end:master
       ports:
