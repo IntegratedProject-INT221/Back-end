@@ -50,10 +50,10 @@ String FILE_DIRECTORY = "./images/";
 }
 @PutMapping("/edit/{id}")
     public void imageEdit(@RequestParam("File")MultipartFile file, @PathVariable("id") int id ) throws IOException{
-    String ChangNameOfImages = "." + FilenameUtils.getExtension(file.getOriginalFilename());
-    File imageFile = new File (  FILE_DIRECTORY + Integer.toString(id)+ChangNameOfImages);
+    String ChangNameOfImages = Integer.toString(id)+"." + FilenameUtils.getExtension(file.getOriginalFilename());
+    File imageFile = new File (  FILE_DIRECTORY + ChangNameOfImages);
     imageFile.createNewFile();
-    FileOutputStream fos = new FileOutputStream(imageFile);
+    FileOutputStream fos = new FileOutputStream(imageFile,false);
     fos.write(file.getBytes());
     fos.close();
     System.out.println("The File Uploaded Successfully");
